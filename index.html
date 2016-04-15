@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+   
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <script src="js/jquery-2.2.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <style type="text/css">
+        body {
+            background-color: transparent;
+        }
+
+        .jf-form {
+            margin-top: 28px;
+        }
+
+        div.form-group {
+            padding: 8px 8px 4px 8px;
+        }
+
+        li {
+            width: 30%;
+        }
+
+        online {
+            background: #d6e9c6;
+            color: #468847;
+        }
+
+        offline {
+            background: #ec8787;
+            color: #551313;
+        }
+
+        .HeaderBackground {
+            background-color: lightgray;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <h3 class="text-center">Property Management Survey</h3>
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+            <li><a data-toggle="tab" href="#menu1" id="menu1link">View-Servey</a></li>
+            <li><a data-toggle="tab" href="#menu2" id="sync">Sync-Survey</a></li>
+
+        </ul>
+
+        <div class="tab-content">
+            <div id="home" class="tab-pane fade in active">
+                <h3>HOME</h3>
+                <div class="container jf-form row">
+
+                    <!-- <form name="jqueryform-cff370" id="jqueryform-cff370" autocomplete="on">-->
+                    <input type="hidden" name="method" value="validateForm">
+                    <input type="hidden" id="serverValidationFields" name="serverValidationFields" value="">
+
+
+
+                    <div class="form-group c1 required col-sm-12" data-cid="c1">
+                        <label class="control-label" for="c1">Owner's Name</label>
+
+                        <div class="input-group">
+                            <span class="input-group-addon left"><i class="glyphicon glyphicon-user"></i></span>
+                            <input type="text" class="form-control" id="OwnerName" name="OwnerName" value=""
+                                   data-rule-required="true" />
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="form-group Mobile required  col-sm-12" data-cid="Mobile">
+                        <label class="control-label" for="Mobile">Mobile</label>
+
+                        <div class="input-group">
+                            <span class="input-group-addon left"><i class="glyphicon glyphicon-phone"></i></span>
+                            <input type="tel" class="form-control" id="Mobile" name="Mobile" value=""
+                                   data-rule-required="true" />
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group Address   col-sm-12" data-cid="Address">
+                        <label class="control-label" for="Address">Address</label>
+
+                        <div class="input-group">
+                            <span class="input-group-addon left"><i class="fa fa-building"></i></span>
+
+                            <textarea class="form-control" placeholder="" id="Address" name="Address" value=""></textarea>
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="form-group SCO  col-sm-12" data-cid="SCO">
+                        <label class="control-label" for="SCO">SCO</label>
+
+                        <div class="input-group">
+                            <span class="input-group-addon left"><i class="fa fa-briefcase"></i></span>
+                            <input type="text" class="form-control" id="SCO" name="SCO" value="" />
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="form-group Sector  col-sm-12" data-cid="Sector">
+                        <label class="control-label" for="Sector">Sector</label>
+                        <div class="input-group">
+                            <span class="input-group-addon left"><i class="fa fa-street-view"></i></span>
+                            <input type="text" class="form-control" id="Sector" name="Sector" value="" />
+                        </div>
+                    </div>
+
+
+                    <div class="form-group City   col-sm-12" data-cid="City">
+                        <label class="control-label" for="City">City</label>
+                        <div class="input-group">
+                            <span class="input-group-addon left"><i class="fa fa-street-view"></i></span>
+                            <input type="text" class="form-control" id="City" name="City" value="" />
+                        </div>
+                    </div>
+
+
+                    <div class="form-group NoOfFloors   col-sm-12" data-cid="NoOfFloors">
+                        <label class="control-label" for="NoOfFloors">No Of Floors</label>
+                        <div class="input-group">
+                            <span class="input-group-addon left"><i class="fa fa-sort-numeric-asc"></i></span>
+                            <input type="text" class="form-control" id="NoOfFloors" name="NoOfFloors" value="" />
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group NoOfTenants   col-sm-12" data-cid="NoOfTenants">
+                        <label class="control-label" for="NoOfTenants">No Of Tenants</label>
+
+                        <div class="input-group">
+                            <span class="input-group-addon left"><i class="fa fa-users"></i></span>
+                            <input type="text" class="form-control" id="NoOfTenants" name="NoOfTenants" value="" />
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="form-group TenantNames   col-sm-12" data-cid="TenantNames">
+                        <label class="control-label" for="TenantNames">Tenant's Name</label>
+
+                        <div class="input-group">
+                            <span class="input-group-addon left"><i class="fa fa-users"></i></span>
+                            <input type="text" class="form-control" id="TenantNames" name="TenantNames" value="" />
+                        </div>
+                    </div>
+
+                    <div class="form-group VacantArea   col-sm-12" data-cid="VacantArea">
+                        <label class="control-label" for="VacantArea">Vacant Area(in sq. feets)</label>
+
+                        <div class="input-group">
+                            <span class="input-group-addon left"><i class="fa fa-area-chart"></i></span>
+                            <input type="text" class="form-control" id="VacantArea" name="VacantArea" value="" />
+                        </div>
+                    </div>
+                    <div class="form-group ImageUrl   col-sm-12" data-cid="ImageUrl">
+                        <label class="control-label" for="ImageUrl">Upload Image</label>
+
+                        <input type="file" class="form-control" id="ImageUrl" name="ImageUrl" value="" />
+
+                    </div>
+
+                    <div class="form-group submit c100 " data-cid="c100" style="position: relative;">
+                        <label class="control-label sr-only" for="c100" style="display: block;">Submit Button</label>
+
+                        <div class="progress" style="display: none; z-index: -1; position: absolute;">
+                            <div class="progress-bar progress-bar-striped active" role="progressbar" style="width: 100%">
+                            </div>
+                        </div>
+
+                        <button type="button" id="btnSaveServey" class="btn btn-primary btn-lg" style="z-index: 1;">
+                            Submit
+                        </button>
+                        <!--<button type="button" id="btnGetData" class="btn btn-primary btn-lg" style="z-index: 1">Get Data</button>
+                        <button type="button" id="btnSaveToDataBase" class="btn btn-primary btn-lg" style="z-index: 1">SaveData</button>-->
+
+                        <p class="error bg-warning" style="display: none;">
+                            Please check the required fields.
+                        </p>
+                        <h5 id="lblMsg"></h5>
+
+                    </div>
+                    <table id="tbl"></table>
+                    <!--   </form>   -->
+
+
+                </div>
+            </div>
+            <div id="menu1" class="tab-pane fade">
+                <h3>View</h3>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="table-responsive">
+                                <table id="tbSurvey" class="table table-bordered table-hover">
+                                    <thead id="theaderServey" class="TableHeader HeaderBackground">
+                                        <tr>
+                                            <th> OwnerName </th>
+                                            <th> Mobile </th>
+                                            <th> Address </th>
+                                            <th> SCO </th>
+                                            <th> Sector </th>
+                                            <th> City </th>
+                                            <th> NoOfFloors </th>
+                                            <th> NoOfTenants </th>
+                                            <th> TenantNames </th>
+                                            <th> VacantArea </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="Details"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="menu2" class="tab-pane fade">
+                <h3>Sync</h3>
+                <div style="height:52px; background: #ec8787; color: #551313;" class="offline">
+                    <h3 style="padding: 15px;text-align:center;">offline</h3>
+                </div>
+
+                <div style="height:52px; background: #d6e9c6; color: #468847;" class="online">
+                    <h3 style="padding: 15px;text-align:center;">online</h3>
+                </div>
+
+                <h3 id="lblSyncSuccessMsg" style="display:none;text-align:center;background: #d6e9c6; color: #468847;width:100%;padding:15px;">Sync Completed Succesfully.</h3>
+                <h3 id="lblSyncErrorMsg" style="display:none;text-align:center;background: #ec8787; color: #551313;width:100%;padding:15px;">Some Error Occured While Syncing.</h3>
+                <div style="margin:30px;">
+                    <input id="btnSyncNow" type="button" class="btn btn-primary btn-lg online1" value="Sync Now" style="height:52px;  width:100%;padding:15px;">
+                    <!--<h3 style="padding: 15px;text-align:center;">Sync Now</h3>-->
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--<h3 class="text-center">Property Management Servey Form</h3>-->
+
+    <script type="text/javascript">
+        var QueriesArray = [];
+        $(document).ready(function () {
+
+            var db = openDatabase('PropertyServeydb', '1.0', 'Property Management Servey', 2 * 1024 * 1024);
+            var msg;
+
+            db.transaction(function (tx) {
+
+                tx.executeSql('CREATE TABLE IF NOT EXISTS ServeyDetails (SurveyId  integer primary key autoincrement,OwnerName text,Mobile text,Address text,SCO text,Sector text,City text,NoOfFloors text,NoOfTenants text,TenantNames text,VacantArea text,ImageUrl text,IsDeleted text)');
+
+                tx.executeSql('CREATE TABLE IF NOT EXISTS ServeyImages (ImageId integer primary key autoincrement,ImageName text,ImageUrl text,ImageDescription text,IsDeleted text)');
+
+            });
+
+            db.transaction(function (tx) {
+                var i;
+                try {
+
+                    for (i = 0; i < QueriesArray.length; ++i) {
+                        var qrstr = QueriesArray[i];
+                        tx.executeSql(qrstr);
+                    }
+                }
+                catch (e) {
+                    console.log(e.message);
+                }
+            });
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //$('#btnSubmit1').on('click', function () {
+            //    var number = $('#name').val();
+            //    //var cnt = { name: 'Hello', phone: '123456' };
+            //    $.ajax({
+            //        type: "POST",
+            //        contentType: "application/json; charset=utf-8",
+            //        //url: "Interaction.aspx/SimpleContact",
+            //        url: "Controller.asmx/SimpleContact",
+            //        data: "{'number':'" + number + "'}",
+            //        //data: JSON.stringify({ 'cnt': cnt }),
+            //        dataType: "json",
+            //        beforeSend: function () {
+            //            $('#btnSubmit1').disabled = true;
+            //        },
+            //        success: function (response) {
+            //            $('#lblMsg').html(response.d).css('color', '#E41171');
+
+            //        },
+            //        error: function (xhr, ajaxOptions, thrownError) {
+            //            $('#lblMsg').html("Error Occured").css('color', '#E41171');
+            //        },
+            //        complete: function () {
+            //            $('#btnSubmit1').disabled = false;
+            //        }
+            //    });
+
+            //});
+
+
+
+            $('#btnSaveServey').on('click', function () {
+
+                var OwnerName = $('#OwnerName').val();
+                var Mobile = $('#Mobile').val();
+                var Address = $('#Address').val();
+                var SCO = $('#SCO').val();
+                var Sector = $('#Sector').val();
+                var City = $('#City').val();
+                var NoOfFloors = $('#NoOfFloors').val();
+                var NoOfTenants = $('#NoOfTenants').val();
+                var TenantNames = $('#TenantNames').val();
+                var VacantArea = $('#VacantArea').val();
+                var ImageUrl = $('#ImageUrl').val();
+
+                var db = openDatabase('PropertyServeydb', '1.0', 'Property Management Servey', 2 * 1024 * 1024);
+                var msg;
+
+                db.transaction(function (tx) {
+
+                    tx.executeSql('Insert into ServeyDetails(OwnerName,Mobile,Address,SCO,Sector,City,NoOfFloors,NoOfTenants,TenantNames,VacantArea,ImageUrl,IsDeleted)values(?,?,?,?,?,?,?,?,?,?,?,?)', [OwnerName, Mobile, Address, SCO, Sector, City, NoOfFloors, NoOfTenants, TenantNames, VacantArea, ImageUrl, 1])
+                });
+                clearForm();
+                $('#lblMsg').html('Data Has Been Saved Successfully').css('color', '#E41171');
+                //    $.ajax({
+                //        type: "POST",
+                //        contentType: "application/json; charset=utf-8",
+                //        //url: "Interaction.aspx/SimpleContact",
+                //        url: "Controller.asmx/SaveServey",
+                //        //data: "{'number':'" + number + "'}",
+                //        data: JSON.stringify({ 'serveyDetail': serveyDetail }),
+                //        dataType: "json",
+                //        beforeSend: function () {
+                //            $('#btnSaveServey').disabled = true;
+                //            $('#btnSaveServey').attr("disabled", true);
+                //        },
+                //        success: function (response) {
+                //            //$('#lblMsg').html(response.d).css('color', '#E41171');
+                //            $('#lblMsg').html('Data Has Been Saved Successfully').css('color', '#E41171');
+                //            $('#btnSaveServey').disabled = false;
+                //            $('#btnSaveServey').attr("disabled", false);
+                //            clearForm();
+                //        },
+                //        error: function (xhr, ajaxOptions, thrownError) {
+                //            $('#lblMsg').html("Error Occured").css('color', '#E41171');
+                //            $('#btnSaveServey').disabled = false;
+                //            $('#btnSaveServey').attr("disabled", false);
+                //        },
+                //        complete: function () {
+
+                //        }
+                //    });
+
+            });
+            //$('#btnGetData').on('click', function () {
+            $('#btnSyncNow').on('click', function () {
+                if (!window.openDatabase) {
+                    alert('Databases are not supported in this browser.');
+                    return;
+                }
+
+                // this line tries to open the database base locally on the device if it does not exist, it will create it and return a database object stored in variable db
+
+                db = openDatabase('PropertyServeydb', '1.0', 'Property Management Servey', 2 * 1024 * 1024);
+
+                // this line clears out any content in the #lbUsers element on the page so that the next few lines will show updated content and not just keep repeating lines
+
+                $('#lbUsers').html('');
+                db.transaction(function (transaction) {
+                    transaction.executeSql('SELECT * FROM ServeyDetails;', [], function (transaction, result) {
+                        var objServeyDetaileMultiple = [];
+
+                        if (result != null && result.rows != null) {
+
+                            for (var i = 0; i < result.rows.length; i++) {
+                                var row = result.rows.item(i);
+                                objServeyDetaileMultiple.push({
+                                    ownerName: row.OwnerName,
+                                    Mobile: row.Mobile,
+                                    Address: row.Address,
+                                    SCO: row.SCO,
+                                    Sector: row.Sector,
+                                    City: row.City,
+                                    NoOfFloors: row.NoOfFloors,
+                                    NoOfTenants: row.NoOfTenants,
+                                    TenantNames: row.TenantNames,
+                                    VacantArea: row.VacantArea,
+                                    ImageUrl: row.ImageUrl,
+                                });
+                            }
+                            $.ajax({
+
+                                type: "POST",
+                                url: "Interaction.aspx/SaveServeyMultiple", // the method we are calling
+                                contentType: "application/json; charset=utf-8",
+                                data: JSON.stringify({ 'objServeyDetaileMultiple': objServeyDetaileMultiple }),
+                                //data: {
+                                //    objServeyDetaileMultiple: objServeyDetaileMultiple
+                                //},
+
+                                dataType: "json",
+                                beforeSend: function () {
+                                    $('#btnSyncNow').disabled = true;
+                                    $('#btnSyncNow').attr("disabled", true);
+
+                                },
+                                success: function (result) {
+                                    // alert('Yay! It worked!');
+                                    $('#btnSyncNow').disabled = false;
+                                    $('#btnSyncNow').attr("disabled", false);
+                                    $('lblSyncSuccessMsg').css('display', 'block');
+                                    $('lblSyncErrorMsg').css('display', 'none');
+                                    transaction.executeSql('delete * from ServeyDetails;');
+                                },
+                                error: function (result) {
+                                    //alert('Oh no :(');
+                                    $('#btnSyncNow').disabled = false;
+                                    $('#btnSyncNow').attr("disabled", false);
+                                    $('lblSyncSuccessMsg').css('display', 'none');
+                                    $('lblSyncErrorMsg').css('display', 'block');
+                                }
+                            });
+                        }
+
+
+                    });
+                }, nullHandler);
+
+                return;
+                alert('in list end');
+
+
+                // this is called when a successful transaction happens
+                function successCallBack() {
+                    alert("DEBUGGING: success");
+
+                }
+
+                function nullHandler() {
+                    alert('null handler');
+                };
+
+                //var db = openDatabase('PropertyServeydb', '1.0', 'Property Management Servey', 2 * 1024 * 1024);
+                //var msg;
+                //var loadData = function (success) {
+                //    db.transaction(function (tx) {
+                //        tx.executeSql(('select * from ServeyDetails'), function (tx, resutl) {
+                //            successCallBack(resutl);
+                //        }, errCallback);
+
+                //    })
+                //}
+                //db.transaction(function (tx) {
+                //    var data = tx.executeSql('select * from ServeyDetails)');
+                //});
+
+                //db.transaction(function (tx) {
+                //    var i;
+                //    try {
+
+                //        for (i = 0; i < QueriesArray.length; ++i) {
+                //            var qrstr = QueriesArray[i];
+                //            tx.executeSql(qrstr);
+                //        }
+                //    }
+                //    catch (e) {
+                //        console.log(e.message);
+                //    }
+                //});
+
+
+
+            });
+
+            //$.each(loadData, function (Index, Item) {
+
+            //    var name = item.toString();
+
+            //})
+
+
+            $("#btnSaveToDataBase").on('click', function () {
+                UploadOnline();
+            })
+            function clearForm() {
+
+                $('#OwnerName').val('');
+                $('#Mobile').val('');
+                $('#Address').val('');
+                $('#SCO').val('');
+                $('#Sector').val('');
+                $('#City').val('');
+                $('#NoOfFloors').val('');
+                $('#NoOfTenants').val('');
+                $('#TenantNames').val('');
+                $('#VacantArea').val('');
+                $('#ImageUrl').val('');
+            }
+
+            function UploadOnline() {
+                debugger;
+                $.ajax({
+
+                    type: "POST",
+                    url: "Interaction.aspx/SimpleContact", // the method we are calling
+                    //contentType: "application/json; charset=utf-8",
+                    data: { number: 1 },
+                    //dataType: "json",
+                    success: function (result) {
+                        alert('Yay! It worked!');
+                    },
+                    error: function (result) {
+                        alert('Oh no :(');
+                    }
+                });
+            }
+
+            //View Servey Details on View Servey Click
+            $("#menu1link").on('click', function () {
+                $("#Details").html("");
+                db = openDatabase('PropertyServeydb', '1.0', 'Property Management Servey', 2 * 1024 * 1024);
+                db.transaction(function (transaction) {
+                    transaction.executeSql('SELECT * FROM ServeyDetails;', [], function (transaction, result) {
+                        var Tablerow = "";
+                        if (result != null && result.rows != null) {
+
+                            for (var i = 0; i < result.rows.length; i++) {
+                                var row = result.rows.item(i);
+                                var Tablerow = '<tr>';
+                                Tablerow += '<td>' + row.OwnerName, + '</td>';
+                                Tablerow += '<td>' + row.Mobile + '</td>';
+                                Tablerow += '<td>' + row.Address + '</td>';
+                                Tablerow += '<td>' + row.SCO + '</td>';
+                                Tablerow += '<td>' + row.Sector + '</td>';
+                                Tablerow += '<td>' + row.City + '</td>';
+                                Tablerow += '<td>' + row.NoOfFloors + '</td>';
+                                Tablerow += '<td>' + row.NoOfTenants + '</td>';
+                                Tablerow += '<td>' + row.TenantNames + '</td>';
+                                Tablerow += '<td>' + row.VacantArea + '</td>';
+                                Tablerow += '</tr>';
+                                $("#Details").append(Tablerow);
+                            }
+                        }
+                    });
+                });
+
+            });
+            $("#sync").on('click', function () {
+                checkNetConnection();
+            })
+            function checkNetConnection() {
+
+                var status = navigator.onLine;
+                if (status) {
+                    //  alert("online");
+                    $(".offline").css('display', 'none');
+                    $(".online").css('display', 'block');
+                    $(".online1").css('display', 'block');
+                    $('#btnSyncNow').disabled = false;
+                    $('#btnSyncNow').attr("disabled", false);
+                } else {
+                    //  alert("offline");
+                    $(".offline").css('display', 'block');
+                    $(".online").css('display', 'none');
+                    $(".online1").css('display', 'none');
+                    $('#btnSyncNow').disabled = true;
+                    $('#btnSyncNow').attr("disabled", true);
+                }
+
+            }
+        });
+    </script>
+
+</body>
+</html>
