@@ -425,7 +425,7 @@
 
                                 },
                                 success: function (result) {
-                                    // alert('Yay! It worked!');
+                                     alert('Yay! It worked!');
                                     $('#btnSyncNow').disabled = false;
                                     $('#btnSyncNow').attr("disabled", false);
                                     $('lblSyncSuccessMsg').css('display', 'block');
@@ -434,8 +434,8 @@
                                         transaction.executeSql('delete from ServeyDetails');
                                     });
                                 },
-                                error: function (result) {
-                                    //alert('Oh no :(');
+                                error: function (xhr, ajaxOptions, thrownError) {
+                                    alert('Oh no :' + xhr.responseText);
                                     $('#btnSyncNow').disabled = false;
                                     $('#btnSyncNow').attr("disabled", false);
                                     $('lblSyncSuccessMsg').css('display', 'none');
