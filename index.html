@@ -466,7 +466,7 @@
                                     });
                                 },
                                 error: function (xhr, ajaxOptions, thrownError) {
-
+alert(xhr.responseText);
                                     console.log('Oh no :' + xhr.responseText);
                                     if (xhr.status == 200) {
                                         db.transaction(function (transaction) {
