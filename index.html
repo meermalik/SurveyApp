@@ -612,7 +612,8 @@ alert(xhr.responseText);
                 checkNetConnection();
             })
             function checkNetConnection() {
-
+ $("#lblSyncSuccessMsg").css("display", "none");
+                $("#lblSyncErrorMsg").css("display", "none");
                 var status = navigator.onLine;
                 if (status) {
                     //  alert("online");
