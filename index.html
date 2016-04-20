@@ -3,16 +3,12 @@
 <head>
     <title></title>
     <meta charset="utf-8" />
-    <!-- Bootstrap online links -->
-    <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">-->
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">-->
-    <!--<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>-->
-    <!--  offline contents  -->
+   
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/font-awesome.min.css" rel="stylesheet" />
     <script src="js/jquery-2.2.2.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <style type="text/css">
+     <style type="text/css">
         body {
             background-color: transparent;
         }
@@ -466,7 +462,7 @@
                                     });
                                 },
                                 error: function (xhr, ajaxOptions, thrownError) {
-alert(xhr.status);
+
                                     console.log('Oh no :' + xhr.responseText);
                                     if (xhr.status == 200) {
                                         db.transaction(function (transaction) {
@@ -612,8 +608,7 @@ alert(xhr.status);
                 checkNetConnection();
             })
             function checkNetConnection() {
- $("#lblSyncSuccessMsg").css("display", "none");
-                $("#lblSyncErrorMsg").css("display", "none");
+
                 var status = navigator.onLine;
                 if (status) {
                     //  alert("online");
